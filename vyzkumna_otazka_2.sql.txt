@@ -2,6 +2,8 @@ SELECT
     year,
     good,
     price_unit,
+    ROUND(AVG(avg_salary)::numeric, 2) AS avg_salary,
+    ROUND(AVG(avg_price)::numeric, 2) AS avg_price,
     ROUND(
         (AVG(avg_salary) / AVG(avg_price))::numeric,
         2
@@ -14,3 +16,4 @@ WHERE good IN ('Chléb konzumní kmínový', 'Mléko polotučné pasterované')
   )
 GROUP BY year, good, price_unit
 ORDER BY year, good;
+

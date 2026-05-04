@@ -17,3 +17,4 @@ WHERE good IN ('Chléb konzumní kmínový', 'Mléko polotučné pasterované')
 GROUP BY year, good, price_unit
 ORDER BY year, good;
 
+

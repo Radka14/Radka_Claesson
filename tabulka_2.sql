@@ -9,7 +9,7 @@ FROM data_academy_content.economies e
 JOIN data_academy_content.countries c
     ON e.country = c.country
 WHERE
-    c.continent IS NOT NULL
-    AND e.year IS NOT NULL
+    c.continent = 'Europe'
+    AND e.year BETWEEN 2006 AND 2018
     AND e.gdp IS NOT NULL
     AND e.population IS NOT NULL;

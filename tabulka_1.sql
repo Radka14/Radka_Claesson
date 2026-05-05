@@ -21,7 +21,7 @@ avg_price AS (
         CASE 
             WHEN cpc.name LIKE '%Mléko%' THEN 'l'
             WHEN cpc.name LIKE '%Chléb%' THEN 'kg'
-            ELSE 'ks' -- nebo 'kg' podle potřeby
+            ELSE 'ks'
         END AS price_unit
     FROM czechia_price cp
     JOIN czechia_price_category cpc
@@ -38,6 +38,6 @@ SELECT
     p.avg_price,
     p.price_unit
 FROM avg_salary s
-CROSS JOIN avg_price p
-WHERE s.year = p.year
+JOIN avg_price p
+    ON s.year = p.year
 ORDER BY s.year, s.id_branch, p.id_goods;

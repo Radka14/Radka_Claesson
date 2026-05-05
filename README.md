@@ -1,2 +1,0 @@
-# Radka_Claesson
-data_academy_2025_09_10
